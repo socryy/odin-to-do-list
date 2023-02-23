@@ -1,0 +1,118 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  margin: 0;
+}
+
+#container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+#header {
+  height: 5vw;
+  background-color: #001524;
+  display: flex;
+  align-items: center;
+  color: #eee;
+  font-size: 2.8vw;
+}
+
+#headerText {
+  border-radius: 10px;
+  margin-left: 2vw;
+  transition: color 1.5s;
+}
+
+#headerText:hover {
+  color: orange;
+}
+
+#main {
+  flex: 1;
+  display: flex;
+}
+
+#sidebar {
+  width: 20%;
+  background-color: #191919;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #eee;
+}
+
+#sidebarOptions {
+  height: auto;
+  width: 100%;
+  margin: 2vw 0 0 4.5vw;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.25vw;
+  align-items: flex-start;
+  gap: 0.5vw;
+}
+
+#sidebarOptions > div {
+  transition: color 0.75s, background-color 0.75s;
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 85%;
+}
+
+#sidebarOptions > div:hover {
+  color: orange;
+  background-color: #2f2f2f;
+}
+
+#sidebarProject {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  margin: 2vw 0 0 4.5vw;
+}
+
+#sidebarProjectTitle {
+  font-size: 2vw;
+  font-weight: bold;
+}
+
+#addProjectButton {
+  background-color: transparent;
+  border: 0px;
+  color: #eee;
+  font-size: 1vw;
+  padding: 0;
+  margin-top: 1vw;
+  padding: 10px 10px 10px 0;
+  border-radius: 5px;
+  width: 85%;
+  transition: color 0.75s, background-color 0.75s;
+  display: flex;
+}
+
+#addProjectButton:hover {
+  color: orange;
+  background-color: #2f2f2f;
+}
+
+#content {
+  flex: 1;
+  background-color: #2f2f2f;
+}
+
+#footer {
+  height: 3vw;
+  background-color: #001524;
+  display: flex;
+  color: #eee;
+  justify-content: center;
+  align-items: center;
+  font-size: 1vw;
+}
