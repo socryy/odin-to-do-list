@@ -62,6 +62,15 @@ export function loadHomepage() {
   addProjectButton.textContent = "+ Add Project";
   sidebarProject.appendChild(addProjectButton);
 
+  const addProjectForm = document.createElement("form");
+  addProjectForm.id = "addProjectForm";
+  addProjectForm.style.display = "none";
+  sidebarProject.appendChild(addProjectForm);
+
+  const addProjectInput = document.createElement("input");
+  addProjectInput.id = "addProjectInput";
+  addProjectForm.appendChild(addProjectInput);
+
   // Create body's content
   const content = document.createElement("div");
   content.id = "content";
