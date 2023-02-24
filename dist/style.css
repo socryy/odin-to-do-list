@@ -104,6 +104,8 @@ body {
 
 #addProjectForm {
   width: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 #addProjectInput {
@@ -111,6 +113,42 @@ body {
   border-radius: 5px;
   border: 0px;
   padding: 10px;
+}
+
+#projectButtons {
+  margin-top: 1vw;
+  width: 75%;
+  display: flex;
+  justify-content: space-between;
+}
+
+#projectButtons > button {
+  width: 47.5%;
+  padding: 8px;
+  border-radius: 10px;
+  border: 0px;
+  color: #eee;
+  font-size: 1vw;
+  display: flex;
+  justify-content: center;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#projectAddButton {
+  background-color: green;
+}
+
+#projectAddButton:hover {
+  background-color: rgb(0, 151, 0);
+}
+
+#projectCancelButton {
+  background-color: rgb(179, 29, 29);
+}
+
+#projectCancelButton:hover {
+  background-color: rgb(255, 0, 0);
 }
 
 #content {

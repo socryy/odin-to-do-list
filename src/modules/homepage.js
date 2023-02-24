@@ -69,7 +69,23 @@ export function loadHomepage() {
 
   const addProjectInput = document.createElement("input");
   addProjectInput.id = "addProjectInput";
+  addProjectInput.placeholder = "Project's name";
   addProjectForm.appendChild(addProjectInput);
+
+  const projectButtons = document.createElement("div");
+  projectButtons.id = "projectButtons";
+  addProjectForm.appendChild(projectButtons);
+
+  const projectCancelButton = document.createElement("button");
+  projectCancelButton.id = "projectCancelButton";
+  projectCancelButton.textContent = "Cancel";
+  projectCancelButton.type = "button";
+  projectButtons.appendChild(projectCancelButton);
+
+  const projectAddButton = document.createElement("button");
+  projectAddButton.id = "projectAddButton";
+  projectAddButton.textContent = "Add";
+  projectButtons.appendChild(projectAddButton);
 
   // Create body's content
   const content = document.createElement("div");
