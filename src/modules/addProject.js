@@ -25,6 +25,34 @@ export function addProject() {
     addProjectButton.style.display = "flex";
 
     const projectName = document.querySelector("input#addProjectInput").value;
-    console.log("sS");
+    const newProject = document.createElement("button");
+    const newProjectText = document.createElement("div");
+    newProjectText.textContent = projectName;
+
+    //Add icon
+    const projectIcon = document.createElement("i");
+    projectIcon.className = "fa-solid fa-arrow-right";
+    newProject.appendChild(projectIcon);
+
+    // Add project's name
+    newProject.appendChild(newProjectText);
+
+    // Reset project input value
+    document.querySelector("input#addProjectInput").value = "";
+
+    const projectsPreview = document.querySelector("#sidebarProjectsPreview");
+    projectsPreview.appendChild(newProject);
+
+    // Event listener for clicks on added projects
+    newProject.addEventListener("click", function () {
+      const projectTitle = document.querySelector("#projectTitle");
+      const addTaskButton = document.querySelector("#addTaskButton");
+
+      // Display project name
+      projectTitle.textContent = projectName;
+
+      // Show button to add tasks to project
+      addTaskButton.style.display = "flex";
+    });
   });
 }

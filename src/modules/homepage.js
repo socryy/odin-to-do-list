@@ -32,20 +32,47 @@ export function loadHomepage() {
   sidebarOptions.id = "sidebarOptions";
   sidebar.appendChild(sidebarOptions);
 
+  // All tasks option
   const allTasksOption = document.createElement("div");
   allTasksOption.id = "allTasksOption";
-  allTasksOption.textContent = "All Tasks";
   sidebarOptions.appendChild(allTasksOption);
 
+  const allTasksIcon = document.createElement("i");
+  allTasksIcon.className = "fa-solid fa-house";
+  allTasksOption.appendChild(allTasksIcon);
+
+  const allTasksText = document.createElement("div");
+  allTasksText.className = "optionText";
+  allTasksText.textContent = "All Tasks";
+  allTasksOption.appendChild(allTasksText);
+
+  // Today option
   const todayOption = document.createElement("div");
   todayOption.id = "todayOption";
-  todayOption.textContent = "Today";
   sidebarOptions.appendChild(todayOption);
 
+  const todayIcon = document.createElement("div");
+  todayIcon.className = "fa-solid fa-calendar-day";
+  todayOption.appendChild(todayIcon);
+
+  const todayText = document.createElement("div");
+  todayText.className = "optionText";
+  todayText.textContent = "Today";
+  todayOption.appendChild(todayText);
+
+  // Week option
   const weekOption = document.createElement("div");
   weekOption.id = "weekOption";
-  weekOption.textContent = "Week";
   sidebarOptions.appendChild(weekOption);
+
+  const weekIcon = document.createElement("div");
+  weekIcon.className = "fa-solid fa-calendar-week";
+  weekOption.appendChild(weekIcon);
+
+  const weekText = document.createElement("div");
+  weekText.className = "optionText";
+  weekText.textContent = "Week";
+  weekOption.appendChild(weekText);
 
   // Create sidebar 'project'
   const sidebarProject = document.createElement("div");
@@ -56,6 +83,11 @@ export function loadHomepage() {
   sidebarProjectTitle.id = "sidebarProjectTitle";
   sidebarProjectTitle.textContent = "Projects";
   sidebarProject.appendChild(sidebarProjectTitle);
+
+  // Create sidebar project's preview
+  const sidebarProjectsPreview = document.createElement("div");
+  sidebarProjectsPreview.id = "sidebarProjectsPreview";
+  sidebarProject.appendChild(sidebarProjectsPreview);
 
   const addProjectButton = document.createElement("button");
   addProjectButton.id = "addProjectButton";
@@ -69,7 +101,7 @@ export function loadHomepage() {
 
   const addProjectInput = document.createElement("input");
   addProjectInput.id = "addProjectInput";
-  addProjectInput.placeholder = "Project's name";
+  addProjectInput.placeholder = "name";
   addProjectForm.appendChild(addProjectInput);
 
   const projectButtons = document.createElement("div");
@@ -91,6 +123,20 @@ export function loadHomepage() {
   const content = document.createElement("div");
   content.id = "content";
   main.appendChild(content);
+
+  const projectTitle = document.createElement("div");
+  projectTitle.id = "projectTitle";
+  content.appendChild(projectTitle);
+
+  const projectContainer = document.createElement("div");
+  projectContainer.id = "projectContainer";
+  content.appendChild(projectContainer);
+
+  const addTaskButton = document.createElement("button");
+  addTaskButton.id = "addTaskButton";
+  addTaskButton.textContent = "+ Add Task";
+  addTaskButton.style.display = "none";
+  content.appendChild(addTaskButton);
 
   // Create footer
   const footer = document.createElement("div");

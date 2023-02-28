@@ -15,7 +15,7 @@ body {
 
 #header {
   height: 5vw;
-  background-color: #001524;
+  background-color: #1d201f;
   display: flex;
   align-items: center;
   color: #eee;
@@ -23,7 +23,7 @@ body {
 }
 
 #headerText {
-  border-radius: 10px;
+  border-radius: 5px;
   margin-left: 2vw;
   transition: color 1.5s;
 }
@@ -39,22 +39,40 @@ body {
 
 #sidebar {
   width: 15%;
-  background-color: #191919;
+  background-color: #b4b4b4;
   display: flex;
   flex-direction: column;
   align-items: center;
+  color: #000;
+  gap: 1vw;
+}
+
+#content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: #d9d9d9;
+  padding: 2vw 4vw;
+}
+
+#footer {
+  height: 3vw;
+  background-color: #1d201f;
+  display: flex;
   color: #eee;
+  justify-content: center;
+  align-items: center;
+  font-size: 1vw;
 }
 
 #sidebarOptions {
   height: auto;
   width: 100%;
-  margin: 2vw 0 0 4.5vw;
+  margin: 1vw 0 0 4.5vw;
   display: flex;
   flex-direction: column;
   font-size: 1.25vw;
   align-items: flex-start;
-  gap: 0.5vw;
 }
 
 #sidebarOptions > div {
@@ -67,7 +85,7 @@ body {
 
 #sidebarOptions > div:hover {
   color: orange;
-  background-color: #2f2f2f;
+  background-color: rgb(146, 146, 146);
 }
 
 #sidebarProject {
@@ -75,8 +93,8 @@ body {
   flex-direction: column;
   align-items: flex-start;
   width: 100%;
-  margin: 2vw 0 0 4.5vw;
-  gap: 1vw;
+  margin-left: 4.5vw;
+  gap: 0.5vw;
 }
 
 #sidebarProjectTitle {
@@ -87,7 +105,7 @@ body {
 #addProjectButton {
   background-color: transparent;
   border: 0px;
-  color: #eee;
+  color: #000;
   font-size: 1vw;
   padding: 0;
   padding: 10px 10px 10px 0;
@@ -99,7 +117,7 @@ body {
 
 #addProjectButton:hover {
   color: orange;
-  background-color: #2f2f2f;
+  background-color: rgb(146, 146, 146);
 }
 
 #addProjectForm {
@@ -112,7 +130,7 @@ body {
   width: 75%;
   border-radius: 5px;
   border: 0px;
-  padding: 10px;
+  padding: 0.75vw;
 }
 
 #projectButtons {
@@ -125,7 +143,7 @@ body {
 #projectButtons > button {
   width: 47.5%;
   padding: 8px;
-  border-radius: 10px;
+  border-radius: 5px;
   border: 0px;
   color: #eee;
   font-size: 1vw;
@@ -140,7 +158,7 @@ body {
 }
 
 #projectAddButton:hover {
-  background-color: rgb(0, 151, 0);
+  background-color: rgb(0, 175, 0);
 }
 
 #projectCancelButton {
@@ -148,20 +166,73 @@ body {
 }
 
 #projectCancelButton:hover {
-  background-color: rgb(255, 0, 0);
+  background-color: rgb(212, 0, 0);
 }
 
-#content {
-  flex: 1;
-  background-color: #2f2f2f;
-}
-
-#footer {
-  height: 3vw;
-  background-color: #001524;
+#sidebarProjectsPreview {
   display: flex;
-  color: #eee;
-  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+#sidebarProjectsPreview > button {
+  border: 0px;
+  padding: 5px;
+  width: 75%;
+  border-radius: 5px;
+  display: flex;
+  background-color: transparent;
+  color: #000;
+  font-size: 1.2vw;
+  transition: color 0.75s, background-color 0.75s;
+  text-align: left;
+  gap: 0.5vw;
   align-items: center;
+}
+
+#sidebarProjectsPreview > button:hover {
+  color: orange;
+  background-color: rgb(146, 146, 146);
+}
+
+/* DISPLAY PROJECTS ON #CONTENT WHEN CLICKED ON PROJECTS SIDEBAR */
+
+#projectTitle {
+  height: 15%;
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  color: orange;
+  font-size: 5vw;
+  padding-left: 10px;
+}
+
+#addTaskButton {
+  padding: 10px;
+  border: 0px;
+  background-color: transparent;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: color 0.75s, background-color 0.75s;
+  display: flex;
+  justify-content: start;
   font-size: 1vw;
+}
+
+#addTaskButton:hover {
+  color: orange;
+  background-color: rgb(146, 146, 146);
+}
+
+#sidebarOptions > div {
+  display: flex;
+  gap: 0.5vw;
+  align-items: flex-start;
+  font-size: 1.2vw;
+}
+
+.optionText {
+  display: flex;
+  align-items: center;
 }
