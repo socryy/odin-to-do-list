@@ -128,9 +128,9 @@ export function loadHomepage() {
   projectTitle.id = "projectTitle";
   content.appendChild(projectTitle);
 
-  const projectContainer = document.createElement("div");
-  projectContainer.id = "projectContainer";
-  content.appendChild(projectContainer);
+  const projectDisplay = document.createElement("div");
+  projectDisplay.id = "projectDisplay";
+  content.appendChild(projectDisplay);
 
   const addTaskButton = document.createElement("button");
   addTaskButton.id = "addTaskButton";

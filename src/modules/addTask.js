@@ -55,8 +55,15 @@ export function addTask() {
     // Add task
     projects[index].tasks.push(taskName);
 
-    // Display tasks
     console.log(projects);
+
+    // Display tasks
+    const projectDisplay = document.querySelector("#projectDisplay");
+
+    const displayDiv = document.createElement("div");
+    displayDiv.textContent =
+      projects[index].tasks[projects[index].tasks.length - 1];
+    projectDisplay.appendChild(displayDiv);
 
     // Reset task name input
     document.querySelector("input#addTaskInput").value = "";
