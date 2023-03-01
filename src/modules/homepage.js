@@ -138,6 +138,32 @@ export function loadHomepage() {
   addTaskButton.style.display = "none";
   content.appendChild(addTaskButton);
 
+  // Create form to add tasks
+  const addTaskForm = document.createElement("form");
+  addTaskForm.id = "addTaskForm";
+  addTaskForm.style.display = "none";
+  content.appendChild(addTaskForm);
+
+  const addTaskInput = document.createElement("input");
+  addTaskInput.id = "addTaskInput";
+  addTaskForm.appendChild(addTaskInput);
+
+  const addTaskButtons = document.createElement("div");
+  addTaskButtons.id = "addTaskButtons";
+  addTaskForm.appendChild(addTaskButtons);
+
+  const cancelButton = document.createElement("button");
+  cancelButton.type = "button";
+  cancelButton.textContent = "Cancel";
+  cancelButton.id = "addTaskCancelButton";
+  addTaskButtons.appendChild(cancelButton);
+
+  const addButton = document.createElement("button");
+  addButton.type = "button";
+  addButton.textContent = "Add";
+  addButton.id = "addTaskAddButton";
+  addTaskButtons.appendChild(addButton);
+
   // Create footer
   const footer = document.createElement("div");
   footer.id = "footer";

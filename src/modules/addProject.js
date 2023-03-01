@@ -1,3 +1,14 @@
+// Project's object constructor
+function Project(name) {
+  return {
+    tasks: [],
+    name,
+  };
+}
+
+// Projects array
+export const projects = [];
+
 export function addProject() {
   // Show add project form
   const addProjectButton = document.querySelector("button#addProjectButton");
@@ -43,12 +54,17 @@ export function addProject() {
     const projectsPreview = document.querySelector("#sidebarProjectsPreview");
     projectsPreview.appendChild(newProject);
 
+    // Create object to store the project and its tasks
+    const project = new Project(projectName);
+    projects.push(project);
+    console.log("Proj: " + projects[projects.length - 1].name);
+
     // Event listener for clicks on added projects
     newProject.addEventListener("click", function () {
       const projectTitle = document.querySelector("#projectTitle");
       const addTaskButton = document.querySelector("#addTaskButton");
 
-      // Display project name
+      // Display project name on page's title
       projectTitle.textContent = projectName;
 
       // Show button to add tasks to project
