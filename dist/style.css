@@ -1,5 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Shantell+Sans:wght@300&display=swap");
+
 * {
   box-sizing: border-box;
+  font-family: "Shantell Sans", cursive;
 }
 
 body {
@@ -26,6 +29,7 @@ body {
   border-radius: 5px;
   margin-left: 2vw;
   transition: color 1.5s;
+  cursor: default;
 }
 
 #headerText:hover {
@@ -130,8 +134,7 @@ body {
 #addProjectInput {
   width: 75%;
   border-radius: 10px;
-  border: 0px;
-  padding: 0.75vw;
+  padding: 0.5vw;
 }
 
 #projectButtons {
@@ -187,7 +190,7 @@ body {
   font-size: 1.2vw;
   transition: color 0.75s, background-color 0.75s;
   text-align: left;
-  gap: 0.5vw;
+  gap: 1vw;
   align-items: center;
   cursor: pointer;
 }
@@ -197,6 +200,14 @@ body {
   background-color: rgb(146, 146, 146);
 }
 
+#sidebarProjectsPreview > button i {
+  transition: transform 0.75s;
+}
+
+#sidebarProjectsPreview > button:hover i.fa-arrow-right {
+  transform: translateX(0.6vw);
+}
+
 #projectTitle {
   height: 15%;
   width: 100%;
@@ -204,7 +215,7 @@ body {
   justify-content: start;
   align-items: center;
   color: orange;
-  font-size: 5vw;
+  font-size: 6vw;
   padding-left: 10px;
   margin-bottom: 1vw;
 }
@@ -248,9 +259,9 @@ body {
 
 #addTaskInput {
   flex: 1;
-  padding: 10px;
-  border: 0px;
+  padding: 0.4vw;
   border-radius: 5px;
+  font-size: 1.25vw;
 }
 
 #addTaskButtons {
@@ -285,13 +296,100 @@ body {
   background-color: rgb(0, 175, 0);
 }
 
+#projectDisplay {
+  display: flex;
+  flex-direction: column;
+  gap: 1vw;
+}
+
 #projectDisplay > div {
   padding: 10px;
-  font-size: 1.2vw;
+  font-size: 2vw;
   transition: background-color 0.75s;
   border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-left: 0.4vw solid transparent;
 }
 
 #projectDisplay > div:hover {
   background-color: rgb(201, 201, 201);
+}
+
+#closingIcon {
+  cursor: pointer;
+  padding: 2.5px;
+  margin-left: 1vw;
+  transition: color 0.5s;
+}
+
+#closingIcon:hover {
+  color: orange;
+}
+
+input {
+  border: 2px solid black;
+  outline: none;
+}
+
+.cb {
+  display: none;
+}
+
+.taskTitle {
+  margin-right: auto;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+#projectDisplay > div > label::before {
+  content: "";
+  width: 1vw;
+  height: 1vw;
+  border-radius: 10px;
+  border: 0.15vw solid black;
+  display: inline-block;
+  margin-right: 0.75vw;
+  transition: background-color 0.5s, background-image 0.5s, border 0.5s;
+}
+
+#projectDisplay > div > input:checked + label::before {
+  background-color: rgb(255, 187, 0);
+  border: 0.15vw solid rgb(255, 187, 0);
+  background-image: url(../src/imgs/checkIcon.png);
+  background-position: center;
+  background-size: cover;
+}
+
+.taskTitleText {
+  display: flex;
+  align-items: center;
+}
+
+.selectPriority {
+  display: flex;
+  align-items: center;
+  margin-right: 1vw;
+}
+
+.selectPriority > select {
+  outline: none;
+  border: 2px solid black;
+}
+
+#editTaskIcon {
+  margin-left: 1.5vw;
+  cursor: pointer;
+  transition: color 0.5s;
+}
+
+#editTaskIcon:hover {
+  color: orange;
+}
+
+.calendarInput,
+.selectPriority > select {
+  cursor: pointer;
 }

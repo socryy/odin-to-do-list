@@ -24,6 +24,9 @@ export function addProject() {
   cancelButton.addEventListener("click", () => {
     projectForm.style.display = "none";
     addProjectButton.style.display = "flex";
+
+    // Reset input field text
+    document.querySelector("#addProjectInput").value = "";
   });
 
   // Add project event listener
@@ -40,13 +43,34 @@ export function addProject() {
     const newProjectText = document.createElement("div");
     newProjectText.textContent = projectName;
 
-    //Add icon
+    // Add arrow icon
     const projectIcon = document.createElement("i");
     projectIcon.className = "fa-solid fa-arrow-right";
     newProject.appendChild(projectIcon);
 
     // Add project's name
     newProject.appendChild(newProjectText);
+
+    // Add 'X' mark icon
+    const closingIcon = document.createElement("i");
+    closingIcon.className = "fa-solid fa-xmark";
+    closingIcon.style.display = "none";
+    closingIcon.style.marginLeft = "auto";
+    closingIcon.id = "closeProjectButton";
+    newProject.appendChild(closingIcon);
+
+    // Show 'X' on project's mouse over
+    newProject.addEventListener("mouseover", () => {
+      closingIcon.style.display = "flex";
+    });
+
+    // Hide 'X' on project's mouse out
+    newProject.addEventListener("mouseout", () => {
+      closingIcon.style.display = "none";
+    });
+
+    const projectTitle = document.querySelector("#projectTitle");
+    const addTaskButton = document.querySelector("#addTaskButton");
 
     // Reset project input value
     document.querySelector("input#addProjectInput").value = "";
@@ -57,18 +81,23 @@ export function addProject() {
     // Create object to store the project and its tasks
     const project = new Project(projectName);
     projects.push(project);
-    console.log("Proj: " + projects[projects.length - 1].name);
 
     // Event listener for clicks on added projects
     newProject.addEventListener("click", function () {
-      const projectTitle = document.querySelector("#projectTitle");
-      const addTaskButton = document.querySelector("#addTaskButton");
-
       // Display project name on page's title
       projectTitle.textContent = projectName;
 
       // Show button to add tasks to project
       addTaskButton.style.display = "flex";
+    });
+
+    // Event listener to remove projects/tasks when 'X' icon is clicked
+    closingIcon.addEventListener("click", function () {
+      document.querySelector("#projectTitle").innerHTML = "aa";
+      newProject.remove();
+      projectTitle.textContent = "";
+      addTaskButton.style.display = "none";
+      console.log("pass");
     });
   });
 }

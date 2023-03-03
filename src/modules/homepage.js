@@ -101,7 +101,7 @@ export function loadHomepage() {
 
   const addProjectInput = document.createElement("input");
   addProjectInput.id = "addProjectInput";
-  addProjectInput.placeholder = "name";
+  addProjectInput.required = true;
   addProjectForm.appendChild(addProjectInput);
 
   const projectButtons = document.createElement("div");
@@ -159,7 +159,7 @@ export function loadHomepage() {
   addTaskButtons.appendChild(cancelButton);
 
   const addButton = document.createElement("button");
-  addButton.type = "button";
+  addButton.type = "submit";
   addButton.textContent = "Add";
   addButton.id = "addTaskAddButton";
   addTaskButtons.appendChild(addButton);
