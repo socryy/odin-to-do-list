@@ -17,7 +17,7 @@ body {
 }
 
 #header {
-  height: 5vw;
+  min-height: 5vw;
   background-color: #1d201f;
   display: flex;
   align-items: center;
@@ -60,7 +60,7 @@ body {
 }
 
 #footer {
-  height: 3vw;
+  min-height: 3vw;
   background-color: #1d201f;
   display: flex;
   color: #eee;
@@ -135,6 +135,7 @@ body {
   width: 75%;
   border-radius: 10px;
   padding: 0.5vw;
+  font-size: 1vw;
 }
 
 #projectButtons {
@@ -338,7 +339,6 @@ input {
 }
 
 .taskTitle {
-  margin-right: auto;
   display: flex;
   align-items: center;
   cursor: pointer;
@@ -372,15 +372,19 @@ input {
   display: flex;
   align-items: center;
   margin-right: 1vw;
+  border-radius: 5px;
 }
 
 .selectPriority > select {
   outline: none;
   border: 2px solid black;
+  font-size: 1.2vw;
+  border-radius: 5px;
 }
 
 #editTaskIcon {
   margin-left: 1.5vw;
+  margin-right: auto;
   cursor: pointer;
   transition: color 0.5s;
 }
@@ -392,4 +396,55 @@ input {
 .calendarInput,
 .selectPriority > select {
   cursor: pointer;
+}
+
+#editTitleInput {
+  font-size: 1.1vw;
+  border-radius: 5px;
+}
+
+#editDiv {
+  display: none;
+  flex-direction: column;
+  max-width: 15%;
+  gap: 0.5vw;
+}
+
+#editDivButtons {
+  display: flex;
+  justify-content: space-between;
+  gap: 1vw;
+}
+
+#editDivButtons > button {
+  font-size: 1vw;
+  flex: 1;
+  border-radius: 5px;
+}
+
+#editCancelButton {
+  color: #eee;
+  font-weight: bold;
+  background-color: #f87a71;
+  cursor: pointer;
+}
+
+#editCancelButton:hover {
+  background-color: #ff1100;
+}
+
+#editAddButton {
+  color: #eee;
+  font-weight: bold;
+  background-color: #75d175;
+  cursor: pointer;
+}
+
+#editAddButton:hover {
+  background-color: #00b400;
+}
+
+.calendarInput {
+  font-size: 1.2vw;
+  border-radius: 5px;
 }

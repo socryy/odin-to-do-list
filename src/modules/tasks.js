@@ -94,6 +94,92 @@ export function addTask() {
     taskTitle.htmlFor = "taskCheckbox" + count;
     count++;
 
+    // Add input to change task name
+    const editDiv = document.createElement("div");
+    editDiv.id = "editDiv";
+    displayDiv.appendChild(editDiv);
+
+    const editTitleInput = document.createElement("input");
+    editTitleInput.id = "editTitleInput";
+    editDiv.appendChild(editTitleInput);
+
+    const editDivButtons = document.createElement("div");
+    editDivButtons.id = "editDivButtons";
+    editDiv.appendChild(editDivButtons);
+
+    const editCancelButton = document.createElement("button");
+    editCancelButton.id = "editCancelButton";
+    editCancelButton.textContent = "Cancel";
+    editDivButtons.appendChild(editCancelButton);
+
+    editCancelButton.addEventListener("click", () => {
+      // Hide edit input
+      editDiv.style.display = "none";
+
+      // Show task again
+      taskTitle.style.display = "flex";
+
+      // Reset input text
+      editTitleInput.value = "";
+
+      // reset items alignment to default
+      displayDiv.style.alignItems = "center";
+    });
+
+    const editAddButton = document.createElement("button");
+    editAddButton.id = "editAddButton";
+    editAddButton.textContent = "Add";
+    editDivButtons.appendChild(editAddButton);
+
+    editAddButton.addEventListener("click", () => {
+      // Get task's new name
+      const inputValue = editTitleInput.value;
+
+      if (inputValue === "") {
+        alert("New task name can't be empty");
+        return;
+      }
+
+      // Replace task name on 'projects' tasks array
+      const taskIndex = taskCheckbox.id.split("x")[1];
+      projects[getProjectIndex(projectName)].tasks[taskIndex] = inputValue;
+
+      // Replace task old name with new one
+      taskTitle.textContent = inputValue;
+
+      // Hide edit input
+      editDiv.style.display = "none";
+
+      // Show task again
+      taskTitle.style.display = "flex";
+
+      // Reset input text
+      editTitleInput.value = "";
+
+      // reset items alignment to default
+      displayDiv.style.alignItems = "center";
+    });
+
+    // Add edit task icon
+    const editTaskIcon = document.createElement("i");
+    editTaskIcon.id = "editTaskIcon";
+    editTaskIcon.style.visibility = "hidden";
+    editTaskIcon.className = "fa-regular fa-pen-to-square";
+    editTaskIcon.style.fontSize = "1.5vw";
+    displayDiv.appendChild(editTaskIcon);
+
+    // Event listener to edit tasks
+    editTaskIcon.addEventListener("click", () => {
+      // Hide task name
+      taskTitle.style.display = "none";
+
+      // Show edit input
+      editDiv.style.display = "flex";
+
+      // change items alignment to keep them at the top of the div when editing
+      displayDiv.style.alignItems = "flex-start";
+    });
+
     // Add priority select
     const selectDiv = document.createElement("div");
     selectDiv.className = "selectPriority";
@@ -139,19 +225,6 @@ export function addTask() {
     calendarInput.type = "date";
     displayDiv.appendChild(calendarInput);
 
-    // Add edit task icon
-    const editTaskIcon = document.createElement("i");
-    editTaskIcon.id = "editTaskIcon";
-    editTaskIcon.style.visibility = "hidden";
-    editTaskIcon.className = "fa-regular fa-pen-to-square";
-    editTaskIcon.style.fontSize = "1.5vw";
-    displayDiv.appendChild(editTaskIcon);
-
-    // Event listener to edit tasks
-    editTaskIcon.addEventListener("click", () => {
-      console.log("click");
-    });
-
     // Add closing icon to tasks
     const closingIcon = document.createElement("i");
     closingIcon.id = "closingIcon";
@@ -174,6 +247,8 @@ export function addTask() {
     // Remove task from screen
     closingIcon.addEventListener("click", function () {
       displayDiv.remove();
+      document.querySelector("#container").style.backgroundColor =
+        "rgb(0,0,0,.5";
     });
 
     // Reset task name input
