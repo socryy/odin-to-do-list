@@ -124,6 +124,9 @@ export function addTask() {
 
       // reset items alignment to default
       displayDiv.style.alignItems = "center";
+
+      // Show edit task icon
+      editTaskIcon.style.opacity = "1";
     });
 
     const editAddButton = document.createElement("button");
@@ -158,6 +161,9 @@ export function addTask() {
 
       // reset items alignment to default
       displayDiv.style.alignItems = "center";
+
+      // Show edit task icon
+      editTaskIcon.style.opacity = "1";
     });
 
     // Add edit task icon
@@ -175,6 +181,9 @@ export function addTask() {
 
       // Show edit input
       editDiv.style.display = "flex";
+
+      // Hide edit task icon
+      editTaskIcon.style.opacity = "0";
 
       // change items alignment to keep them at the top of the div when editing
       displayDiv.style.alignItems = "flex-start";
@@ -253,6 +262,9 @@ export function addTask() {
 
     // Reset task name input
     document.querySelector("input#addTaskInput").value = "";
+
+    // 'All Tasks' event listener
+    AllTasksButton;
 
     console.log("PROJECTS: " + projects);
   });
